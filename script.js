@@ -95,11 +95,20 @@ function makeGoodsCard(title, description, tags, price, img) {
     shopItem.querySelector('h1').textContent = title;
     shopItem.querySelector('p').textContent = description;
     shopItem.querySelector('img').src = img;
-    shopItem.querySelector('.tags').textContent = tags;
     shopItem.querySelector('span').textContent = price;
+
+
+    const tagsContainer = shopItem.querySelector('.tags');
+    tags.forEach((tag) => {
+        const element = document.createElement('span');
+        element.textContent = tag;
+        element.classList.add('tag');
+        tagsContainer.append(element);
+    });
 
     return shopItem;
 }
+
 
 items.forEach(function(item) {
     const card = makeGoodsCard(item.title, item.description, item.tags, item.price, item.img);
