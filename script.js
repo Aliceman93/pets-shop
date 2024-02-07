@@ -86,9 +86,7 @@ const items = [{
 
 const itemTemplate = document.querySelector('#item-template');
 const goodsCard = document.querySelector('#shop-items');
-const goodsContainer = document.createElement('div');
-goodsCard.classList.add('price');
-goodsCard.classList.add('tags');
+
 
 function makeGoodsCard(title, description, tags, price, img) {
     const shopItem = itemTemplate.content.cloneNode(true);
